@@ -1,0 +1,79 @@
+altTranslationKeyFormat: null
+altTranslationMethod: none
+fieldLayouts:
+  24c55b65-42ba-443c-aaa0-3c9cac48bb33:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\assets\AssetTitleField
+            uid: f9b2a316-a001-44ed-b2b1-592d312b6211
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: cef3b054-1482-48de-9abb-d63fb3ee178e # Alt Text
+            handle: null
+            includeInCards: false
+            instructions: 'Wird angezeigt, wenn das Bild nicht geladen werden kann.'
+            label: 'Alternativer Text'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4b7b5b99-218d-4321-abaf-c794f0bc006a
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: e43fa49e-981e-4db6-90e4-b05806a84e06 # Text
+            handle: mediaTitle
+            includeInCards: false
+            instructions: null
+            label: Medien-Titel
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5652474e-f293-4106-a999-1c8b87df41d2
+            userCondition: null
+            warning: null
+            width: 50
+        name: Inhalt
+        uid: da7ed8b7-14f8-4d0f-9ad1-ab165606f667
+        userCondition: null
+fs: global
+handle: global
+name: Global
+sortOrder: 0
+subpath: ''
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+transformFs: ''
+transformSubpath: ''

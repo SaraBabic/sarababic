@@ -1,0 +1,19 @@
+columnSuffix: null
+contentColumnType: string
+handle: linkItem
+instructions: ''
+name: Link
+searchable: false
+settings:
+  entryTypes:
+    - 1b7fd4c0-889b-4a8c-8010-e7915547311d # Datei Link
+    - 2cd290cd-8f1d-486c-b6cf-5d12ecc3cd2d # Intern
+    - 92f3cc18-4537-499a-bbbb-0576d2982d86 # Extern
+  maxEntries: '1'
+  minEntries: '1'
+  propagationKeyFormat: null
+  propagationMethod: all
+  viewMode: blocks
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

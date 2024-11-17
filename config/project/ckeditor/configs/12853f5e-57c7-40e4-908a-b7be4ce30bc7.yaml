@@ -1,0 +1,56 @@
+headingLevels:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+name: Default
+options:
+  alignment:
+    options:
+      - left
+      - right
+      - center
+  link:
+    decorators:
+      openInNewTab:
+        attributes:
+          rel: 'noopener noreferrer'
+          target: _blank
+        defaultValue: true
+        label: 'In neuem Tab öffnen'
+        mode: manual
+  style:
+    definitions:
+      -
+        classes:
+          - red-heading
+        element: h2
+        name: 'Red heading'
+      -
+        classes:
+          - vibrant-code
+        element: pre
+        name: 'Vibrant code'
+      -
+        classes:
+          - marker
+        element: span
+        name: Marker
+toolbar:
+  - heading
+  - style
+  - '|'
+  - alignment
+  - bold
+  - italic
+  - underline
+  - strikethrough
+  - subscript
+  - superscript
+  - link
+  - anchor
+  - bulletedList
+  - numberedList
+  - sourceEditing

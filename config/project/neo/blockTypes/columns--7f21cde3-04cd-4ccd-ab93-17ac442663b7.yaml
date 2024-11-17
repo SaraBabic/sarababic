@@ -1,0 +1,47 @@
+childBlocks:
+  - text
+  - link
+  - group
+color: fuchsia
+conditions: null
+description: ''
+enabled: true
+field: 582be10c-d53c-4101-b2a3-d7ce716969a3 # Module
+fieldLayouts:
+  c972894f-3dab-419e-95a8-a017c1ad0d3c:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 659e06e8-6fe9-430b-a30d-6b02f7409190 # Spalten
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: Layout
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a5021277-49cb-4413-b9b5-487b82f63147
+            userCondition: null
+            warning: null
+            width: 50
+        name: Einstellungen
+        uid: 6971d485-8ec2-4a0a-ae1d-c6dade20ed4e
+        userCondition: null
+group: null
+groupChildBlockTypes: true
+handle: columns
+icon: null
+iconFilename: ''
+ignorePermissions: true
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
+name: Spalten
+topLevel: true

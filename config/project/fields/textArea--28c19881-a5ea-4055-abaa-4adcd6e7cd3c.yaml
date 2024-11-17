@@ -1,0 +1,18 @@
+columnSuffix: null
+contentColumnType: string
+handle: textArea
+instructions: ''
+name: Textabschnitt
+searchable: false
+settings:
+  entryTypes:
+    - b480ae0c-6e29-4217-8d7f-9a9834d56c73 # Absatz
+    - ba451899-838d-4daf-b104-8389289f840a # Überschrift
+  maxEntries: ''
+  minEntries: ''
+  propagationKeyFormat: null
+  propagationMethod: all
+  viewMode: blocks
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

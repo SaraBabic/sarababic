@@ -1,0 +1,21 @@
+columnSuffix: null
+contentColumnType: string
+handle: homepage
+instructions: ''
+name: Homepage
+searchable: false
+settings:
+  allowSelfRelations: false
+  limit: '1'
+  localizeRelations: false
+  selectionLabel: 'Startseite wählen'
+  showSiteMenu: false
+  source: null
+  sources:
+    - 'section:a5ba3d2a-68ae-4b35-a7bf-f9ef56ec8d9c' # Seiten
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

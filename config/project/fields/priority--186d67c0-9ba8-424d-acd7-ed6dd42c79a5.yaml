@@ -1,0 +1,19 @@
+columnSuffix: htrzrkns
+contentColumnType: 'decimal(2,1)'
+handle: priority
+instructions: 'Priorität für die Indexierung durch Suchmaschinen (0,0 - 1,0)'
+name: Priorität
+searchable: false
+settings:
+  decimals: '1'
+  defaultValue: 0.5
+  max: 1
+  min: 0
+  prefix: null
+  previewCurrency: ''
+  previewFormat: decimal
+  size: null
+  suffix: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Number

@@ -1,0 +1,59 @@
+childBlocks: null
+color: indigo
+conditions: null
+description: ''
+enabled: true
+field: 582be10c-d53c-4101-b2a3-d7ce716969a3 # Module
+fieldLayouts:
+  cd6e9e67-7efc-40cd-adad-b6c981226b72:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 67a6fc2c-6cec-4678-940f-945e6d696813 # Eintragstyp
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 50b13189-9b81-44af-b5cb-e349bc42fc61
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: 4b3997e5-1b4b-41a8-be6e-6a2214024368 # Zahl
+            handle: limit
+            includeInCards: false
+            instructions: null
+            label: Limit
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c2427b80-a186-4ca2-8321-e332ce6a0e95
+            userCondition: null
+            warning: null
+            width: 25
+        name: Einstellungen
+        uid: a0bf70da-b64f-4c1f-9bd8-05dbc471ca4e
+        userCondition: null
+group: null
+groupChildBlockTypes: true
+handle: entryList
+icon: null
+iconFilename: ''
+ignorePermissions: true
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
+name: 'Einträge (Liste)'
+topLevel: true

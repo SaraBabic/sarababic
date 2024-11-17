@@ -1,0 +1,66 @@
+color: null
+fieldLayouts:
+  96732c2f-8e8e-4785-adc2-63b1b1081496:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 5e5afb49-21a4-4870-a9d8-6c4125d9998e
+            handle: null
+            includeInCards: true
+            instructions: null
+            label: Inhalt
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 331daafe-e78f-44b9-a8e5-72bc511507bc
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 3bf6d15d-6256-4c21-9e60-14f35fd5731a
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: Typ
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ec4f833f-678c-4e2c-bca4-647230675bd1
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: e5f2aa11-95f4-488b-91e7-21d096a2ddd5
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: Stil
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d8eb1715-8eb2-4257-83c9-7915fc4f1702
+            userCondition: null
+            warning: null
+            width: 25
+        name: Content
+        uid: 1b13e252-5ecc-471c-8aba-566f637578ef
+        userCondition: null
+handle: headline
+hasTitleField: false
+icon: null
+name: Überschrift
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

@@ -1,0 +1,21 @@
+columnSuffix: null
+handle: entryType
+instructions: null
+name: Eintragstyp
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - News
+        -
+          - value
+          - news
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

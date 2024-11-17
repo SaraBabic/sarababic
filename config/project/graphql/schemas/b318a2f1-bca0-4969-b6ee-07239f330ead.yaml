@@ -1,0 +1,17 @@
+isPublic: false
+name: 'Private Schema'
+scope:
+  - 'sites.9150003f-ee06-497a-bceb-c2c169d93206:read' # CraftCMS Boilerplate
+  - 'elements.drafts:read'
+  - 'elements.revisions:read'
+  - 'elements.inactive:read'
+  - 'sections.7a5156f8-29e4-40da-9574-4f2b8abdff1e:read' # Hauptnavigation
+  - 'sections.a5ba3d2a-68ae-4b35-a7bf-f9ef56ec8d9c:read' # Seiten
+  - 'nestedentryfields.b40ec017-c91e-4689-b32c-0ba8fda3a466:read' # Text Editor
+  - 'nestedentryfields.6fc95d6d-5f0d-47db-9505-2dcfa358def6:read' # Textabschnitt - Absatz - Text
+  - 'nestedentryfields.6ba183da-ef91-4615-850d-4b82daf96849:read' # Link
+  - 'nestedentryfields.28c19881-a5ea-4055-abaa-4adcd6e7cd3c:read' # Textabschnitt
+  - 'volumes.954edfab-2362-42ed-8269-00a88d878aa7:read' # Global
+  - 'globalsets.a7f070a5-b268-4ce3-9efa-a924ef697dc4:read' # Seitenkonfiguration
+  - 'websites:getAll'
+  - 'forms:create'

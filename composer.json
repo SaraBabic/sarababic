@@ -1,0 +1,51 @@
+{
+  "version": "0.2.0",
+  "require": {
+    "craftcms/ckeditor": "4.0.6",
+    "craftcms/cms": "^5.0.0",
+    "intention/graphql-extended": "0.2.2",
+    "intention/contact-form": "0.3.3",
+    "intention/craft-backup-service": "0.2.0",
+    "spicyweb/craft-neo": "^5.0.0",
+    "vlucas/phpdotenv": "^5.4.0"
+  },
+  "require-dev": {
+    "yiisoft/yii2-shell": "^2.0.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "modules\\": "modules/"
+    }
+  },
+  "minimum-stability": "beta",
+  "config": {
+    "allow-plugins": {
+      "craftcms/plugin-installer": true,
+      "yiisoft/yii2-composer": true
+    },
+    "sort-packages": true,
+    "optimize-autoloader": true,
+    "platform": {
+      "php": "8.2"
+    },
+    "gitlab-domains": [
+      "git.intention.de"
+    ]
+  },
+  "scripts": {
+    "post-root-package-install": [
+      "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+    ]
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://git.intention.de/api/v4/group/226/-/packages/composer/"
+    },
+    {
+      "type": "composer",
+      "url": "https://composer.craftcms.com",
+      "canonical": false
+    }
+  ]
+}

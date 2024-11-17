@@ -1,0 +1,12 @@
+columnSuffix: null
+handle: showSize
+instructions: null
+name: 'Link - Datei Link - Größe anzeigen'
+searchable: false
+settings:
+  default: false
+  offLabel: null
+  onLabel: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Lightswitch

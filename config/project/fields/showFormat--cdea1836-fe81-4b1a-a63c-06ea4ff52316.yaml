@@ -1,0 +1,12 @@
+columnSuffix: null
+handle: showFormat
+instructions: null
+name: 'Link - Datei Link - Format anzeigen'
+searchable: false
+settings:
+  default: false
+  offLabel: null
+  onLabel: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Lightswitch

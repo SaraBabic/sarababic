@@ -1,0 +1,23 @@
+columnSuffix: null
+handle: page
+instructions: null
+name: 'Link - Intern - Seite'
+searchable: false
+settings:
+  allowSelfRelations: false
+  branchLimit: null
+  localizeRelations: false
+  maintainHierarchy: false
+  maxRelations: 1
+  minRelations: null
+  selectionLabel: 'Seite auswählen'
+  showCardsInGrid: false
+  showSiteMenu: true
+  sources:
+    - 'section:a5ba3d2a-68ae-4b35-a7bf-f9ef56ec8d9c' # Seiten
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

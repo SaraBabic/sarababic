@@ -1,0 +1,113 @@
+dateModified: 1718628494
+email:
+  fromEmail: $EMAIL_SENDER_ADDRESS
+  fromName: $EMAIL_SENDER_NAME
+  replyToEmail: null
+  template: ''
+  transportSettings:
+    host: $EMAIL_HOSTNAME
+    password: $EMAIL_AUTH_PASSWORD
+    port: $EMAIL_PORT
+    useAuthentication: $EMAIL_USE_AUTH
+    username: $EMAIL_AUTH_USERNAME
+  transportType: craft\mail\transportadapters\Smtp
+fs:
+  global:
+    hasUrls: true
+    name: Global
+    settings:
+      path: '@assetsRootPath/global'
+    type: craft\fs\Local
+    url: '@assetsBaseUrl/global'
+meta:
+  __names__:
+    0d60f280-15cb-4a7f-a9f9-925cff9353ef: Standard # Standard
+    1b7fd4c0-889b-4a8c-8010-e7915547311d: 'Datei Link' # Datei Link
+    2be93fc8-a8c8-4ef9-a881-6999042291c9: Kontaktformular # Kontaktformular
+    2cd290cd-8f1d-486c-b6cf-5d12ecc3cd2d: Intern # Intern
+    4b3997e5-1b4b-41a8-be6e-6a2214024368: Zahl # Zahl
+    5ec4cdda-2b82-4458-9037-61b4ded6e999: 'Public Schema' # Public Schema
+    5fe8711f-ea1c-4f7c-8b17-551c22911836: E-Mail # E-Mail
+    6ba183da-ef91-4615-850d-4b82daf96849: Link # Link
+    6fc95d6d-5f0d-47db-9505-2dcfa358def6: 'Textabschnitt - Absatz - Text' # Textabschnitt - Absatz - Text
+    7a5156f8-29e4-40da-9574-4f2b8abdff1e: Hauptnavigation # Hauptnavigation
+    07c5f08c-88c4-4799-9bd6-e98816f41036: Homepage # Homepage
+    7f21cde3-04cd-4ccd-ab93-17ac442663b7: Spalten # Spalten
+    08ad0a02-3b3d-4515-8dd5-de9434d163a5: Inaktiv # Inaktiv
+    9fdf44e3-df83-45d2-8b7a-2398e417e976: Gruppe # Gruppe
+    28c19881-a5ea-4055-abaa-4adcd6e7cd3c: Textabschnitt # Textabschnitt
+    42b295ab-e778-4c44-87d7-ad7aa073f4d3: Linktext # Linktext
+    67a6fc2c-6cec-4678-940f-945e6d696813: Eintragstyp # Eintragstyp
+    92f3cc18-4537-499a-bbbb-0576d2982d86: Extern # Extern
+    186d67c0-9ba8-424d-acd7-ed6dd42c79a5: Priorität # Priorität
+    529ac1bc-4fd6-4508-b075-8c7b1cee7a63: Icon # Icon
+    582be10c-d53c-4101-b2a3-d7ce716969a3: Module # Module
+    659e06e8-6fe9-430b-a30d-6b02f7409190: Spalten # Spalten
+    954edfab-2362-42ed-8269-00a88d878aa7: Global # Global
+    12853f5e-57c7-40e4-908a-b7be4ce30bc7: Default # Default
+    64259d2d-817e-4fb4-a9be-619bd3c57014: Aktiv # Aktiv
+    4588913f-bc97-4ebe-8ec3-29a8efce9e67: Bilder # Bilder
+    9150003f-ee06-497a-bceb-c2c169d93206: 'CraftCMS Boilerplate' # CraftCMS Boilerplate
+    62533532-ce6a-420e-8c67-b7c8029c525e: SEO-Beschreibung # SEO-Beschreibung
+    a5ba3d2a-68ae-4b35-a7bf-f9ef56ec8d9c: Seiten # Seiten
+    a7f070a5-b268-4ce3-9efa-a924ef697dc4: Seitenkonfiguration # Seitenkonfiguration
+    a807a09e-c6e8-4d37-974d-6ef3c2632920: Boilerplate # Boilerplate
+    a861ea85-4c1a-458e-bc22-edfa3741c096: 'Einträge (Liste)' # Einträge (Liste)
+    ac98e4ce-ad0c-4032-88e2-e57f1291e6ff: Text # Text
+    b40ec017-c91e-4689-b32c-0ba8fda3a466: 'Text Editor' # Text Editor
+    b318a2f1-bca0-4969-b6ee-07239f330ead: 'Private Schema' # Private Schema
+    b480ae0c-6e29-4217-8d7f-9a9834d56c73: Absatz # Absatz
+    ba55e41d-744e-4c1a-8f89-9b8469a2e163: SEO-Titel # SEO-Titel
+    ba451899-838d-4daf-b104-8389289f840a: Überschrift # Überschrift
+    c4ddcf89-46f3-47b0-b0a6-ff5cd3337933: Link # Link
+    c8f1bdc6-8e91-4fd3-83e5-f96a507bb27c: 'Link Layout' # Link Layout
+    cef3b054-1482-48de-9abb-d63fb3ee178e: 'Alt Text' # Alt Text
+    d632eb1b-e6c2-4db4-8bdd-a6ca9d7b6243: Hauptnavigation # Hauptnavigation
+    df9d502e-e0d0-4608-bc4b-73ea824cf9e3: Breite # Breite
+    e43fa49e-981e-4db6-90e4-b05806a84e06: Text # Text
+    ff673cc2-1bbc-4d7d-9f06-ccfbf36b33b5: Indexierung # Indexierung
+plugins:
+  ckeditor:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.0.0.0
+  int-contact-form:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  int-craft-backup-service:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+    settings:
+      backup_interval: '30'
+      ftp_host: w01051ae.kasserver.com
+      ftp_pass: R4MUhAhgxYEusa2F
+      ftp_port: ''
+      ftp_upload_path: backups/boilerplate-test/
+      ftp_user: f010d2f9
+      task_runner_passkey: rvjotndnjosfwsqmrmmqukvshldjwsqq
+      task_runner_url: 'https://craft-boilerplate.ddev.site/actions/int-craft-backup-service/backup/run-task/?passkey=rvjotndnjosfwsqmrmmqukvshldjwsqq'
+  int-graphql-extended:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  neo:
+    edition: standard
+    enabled: true
+    licenseKey: 9LRISUAAK3DPKU5S26CZ16YI
+    schemaVersion: 5.0.0.1
+system:
+  edition: pro
+  live: true
+  name: Boilerplate
+  retryDuration: null
+  schemaVersion: 5.0.0.20
+  timeZone: Europe/Berlin
+users:
+  allowPublicRegistration: false
+  deactivateByDefault: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  requireEmailVerification: true

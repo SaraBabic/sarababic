@@ -1,0 +1,30 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  - d632eb1b-e6c2-4db4-8bdd-a6ca9d7b6243 # Hauptnavigation
+handle: mainNavigation
+maxAuthors: 1
+name: Hauptnavigation
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primäre eintrag Seite'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  9150003f-ee06-497a-bceb-c2c169d93206: # CraftCMS Boilerplate
+    enabledByDefault: true
+    hasUrls: true
+    template: null
+    uriFormat: '{parent.slug}/{slug}'
+structure:
+  maxLevels: 2
+  uid: bc8e9564-91ff-46ae-adae-3c73f7cbc129
+type: structure

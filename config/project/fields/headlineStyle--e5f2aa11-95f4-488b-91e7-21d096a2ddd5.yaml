@@ -1,0 +1,65 @@
+columnSuffix: null
+handle: headlineStyle
+instructions: null
+name: 'Textabschnitt - Überschrift - Stil'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Standard
+        -
+          - value
+          - default
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - H1
+        -
+          - value
+          - h1
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - H2
+        -
+          - value
+          - h2
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - H3
+        -
+          - value
+          - h3
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - H4
+        -
+          - value
+          - h4
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

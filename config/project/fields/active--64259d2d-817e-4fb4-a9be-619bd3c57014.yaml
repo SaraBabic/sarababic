@@ -1,0 +1,12 @@
+contentColumnType: boolean
+handle: active
+instructions: ''
+name: Aktiv
+searchable: false
+settings:
+  default: true
+  offLabel: null
+  onLabel: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Lightswitch

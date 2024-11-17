@@ -1,0 +1,72 @@
+fieldLayouts:
+  735f321c-e528-4537-8684-c14b352bf42f:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: e43fa49e-981e-4db6-90e4-b05806a84e06 # Text
+            handle: websiteTitle
+            includeInCards: false
+            instructions: null
+            label: 'Name der Webseite'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: df9acc98-6c92-4578-91ee-1a8b0e4f6a2e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 07c5f08c-88c4-4799-9bd6-e98816f41036 # Homepage
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 05b61a8a-d2e8-4573-b882-e33d28955bb7
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 4588913f-bc97-4ebe-8ec3-29a8efce9e67 # Bilder
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: Logo
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4ac0f2ab-4fc4-4fbd-bf73-ec719524609d
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            elementCondition: null
+            fieldUid: 5fe8711f-ea1c-4f7c-8b17-551c22911836 # E-Mail
+            handle: contactEmail
+            includeInCards: false
+            instructions: null
+            label: 'Kontakt E-Mail'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e73e8962-1405-490a-804d-6f46e2152b87
+            userCondition: null
+            warning: null
+            width: 50
+        name: Allgemein
+        uid: 7530df94-0f5e-452e-9a23-f3e9cdb87f0e
+        userCondition: null
+handle: siteConfig
+name: Seitenkonfiguration
+sortOrder: 1

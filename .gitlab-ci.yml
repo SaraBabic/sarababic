@@ -1,0 +1,177 @@
+image: tetraweb/php
+
+variables:
+  STAGE_SERVER_ADDRESS: "185.243.11.41"
+  STAGE_SERVER_USER: "[SSH_USER_HERE]"
+  STAGE_SERVER_TARGET_DIR: "/[CRAFT_ROOT_FOLDER_HERE]"
+  STAGE_SERVER_VERSIONS_DIR: "/releases/[DOMAIN_NAME_HERE]"
+  STAGE_URL: https://[DOMAIN_NAME_HERE]/admin/
+
+  PROD_SERVER_ADDRESS: "185.243.11.41"
+  PROD_SERVER_USER: "[SSH_USER_HERE]"
+  PROD_SERVER_TARGET_DIR: "/[CRAFT_ROOT_FOLDER_HERE]"
+  PROD_SERVER_VERSIONS_DIR: "/releases/[DOMAIN_NAME_HERE]"
+  PROD_SERVER_LICENSE_DIR: "/licenses/[DOMAIN_NAME_HERE]"
+  PROD_URL: https://[DOMAIN_NAME_HERE]/admin/
+
+before_script:
+  ##
+  ## Install ssh-agent if not already installed, it is required by Docker.
+  ## (change apt-get to yum if you use an RPM-based image)
+  ##
+  - "which ssh-agent || ( apt-get update -y && apt-get install openssh-client git -y )"
+
+  # Composer
+  # - apt-get update
+  # - apt-get install zip unzip
+  # - docker-php-ext-enable zip
+  #- apt-get install php7.3-zip
+  # - php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+  # - php composer-setup.php
+  # - php -r "unlink('composer-setup.php');"
+  # - php composer.phar install
+  # - php composer.phar update
+
+  ##
+  ## Run ssh-agent (inside the build environment)
+  ##
+  - eval $(ssh-agent -s)
+
+  ##
+  ## Add the SSH key stored in SSH_PRIVATE variable to the agent store
+  ## We're using tr to fix line endings which makes ed25519 keys work
+  ## without extra base64 encoding.
+  ## https://gitlab.com/gitlab-examples/ssh-private-key/issues/1#note_48526556
+  ##
+  - echo "$SSH_PRIVATE" | tr -d '\r' | ssh-add -
+
+  ##
+  ## Create the SSH directory and give it the right permissions
+  ##
+  - mkdir -p ~/.ssh
+  - chmod 700 ~/.ssh
+
+  ##
+  ## Use ssh-keyscan to scan the keys of your private server. Replace gitlab.com
+  ## with your own domain name. You can copy and repeat that command if you have
+  ## more than one server to connect to.
+  ##
+  - ssh-keyscan $STAGE_SERVER_ADDRESS >> ~/.ssh/known_hosts
+  - chmod 644 ~/.ssh/known_hosts
+
+  - ssh-keyscan $PROD_SERVER_ADDRESS >> ~/.ssh/known_hosts
+  - chmod 644 ~/.ssh/known_hosts
+
+  # For getting the version tag
+  - git config --global user.email "dev@intention.de"
+  - git config --global user.name "Intention DEV"
+
+deploy-staging:
+  script:
+    #TODO: Move all to shell script
+    # Set version folder name
+    - export GIT_VERSION_TAG=$(git describe --abbrev=0)
+
+    # Create neccessary folder and clean version folder
+    - ssh -p22 $STAGE_SERVER_USER@$STAGE_SERVER_ADDRESS "
+      mkdir -p $STAGE_SERVER_VERSIONS_DIR &&
+      rm -rf $STAGE_SERVER_VERSIONS_DIR/$GIT_VERSION_TAG &&
+      mkdir -p $STAGE_SERVER_VERSIONS_DIR/$GIT_VERSION_TAG"
+
+    # Copy all files from local server to remote server
+    - scp -r ./* $STAGE_SERVER_USER@$STAGE_SERVER_ADDRESS:$STAGE_SERVER_VERSIONS_DIR/$GIT_VERSION_TAG
+
+    # Remove files from live folder
+    - ssh -p22 $STAGE_SERVER_USER@$STAGE_SERVER_ADDRESS "
+      rm -rf $STAGE_SERVER_TARGET_DIR/config && rm -rf $STAGE_SERVER_TARGET_DIR/modules &&
+      rm -rf $STAGE_SERVER_TARGET_DIR/composer.json &&
+      rm -rf $STAGE_SERVER_TARGET_DIR/composer.lock"
+
+    # Copy files from new version to live folder
+    - ssh -p22 $STAGE_SERVER_USER@$STAGE_SERVER_ADDRESS "
+      cp -r $STAGE_SERVER_VERSIONS_DIR/$GIT_VERSION_TAG/config $STAGE_SERVER_TARGET_DIR;
+      '[ -d $PROD_SERVER_VERSIONS_DIR/$GIT_VERSION_TAG/modules ]'  && cp -r $PROD_SERVER_VERSIONS_DIR/$GIT_VERSION_TAG/modules $PROD_SERVER_TARGET_DIR;
+      cp -r $STAGE_SERVER_VERSIONS_DIR/$GIT_VERSION_TAG/composer.json $STAGE_SERVER_TARGET_DIR;
+      cp -r $STAGE_SERVER_VERSIONS_DIR/$GIT_VERSION_TAG/composer.lock $STAGE_SERVER_TARGET_DIR"
+
+    # Composer update and set gitlab auth config before
+    - ssh -p22 $STAGE_SERVER_USER@$STAGE_SERVER_ADDRESS "
+      cd $STAGE_SERVER_TARGET_DIR &&
+      composer config gitlab-token.git.intention.de $GITLAB_ACCESS_TOKEN &&
+      composer update"
+
+    # Backup the database just in case any migrations or Project Config changes have issues .
+    - ssh -p22 $STAGE_SERVER_USER@$STAGE_SERVER_ADDRESS "cd $STAGE_SERVER_TARGET_DIR && php craft db/backup"
+
+    # Run composer update, pending migrations, sync project config and clear caches
+    - ssh -p22 $STAGE_SERVER_USER@$STAGE_SERVER_ADDRESS "
+      cd $STAGE_SERVER_TARGET_DIR &&
+      composer update &&
+      php craft clear-caches/all &&
+      php craft migrate/all &&
+      php craft project-config/apply"
+
+  environment:
+    name: staging
+    url: $STAGE_URL
+  when: manual
+  only:
+    refs:
+      - develop
+      - /^release\/.+$/
+
+deploy-production:
+  script:
+    # Set version folder name
+    - export GIT_VERSION_TAG=$(git describe --abbrev=0)
+
+    # Create neccessary folder and clean version folder
+    - ssh -p22 $PROD_SERVER_USER@$PROD_SERVER_ADDRESS "
+      mkdir -p $PROD_SERVER_VERSIONS_DIR &&
+      mkdir -p $PROD_SERVER_LICENSE_DIR &&
+      rm -rf $PROD_SERVER_VERSIONS_DIR/$GIT_VERSION_TAG &&
+      mkdir -p $PROD_SERVER_VERSIONS_DIR/$GIT_VERSION_TAG"
+
+    # Copy all files from local server to remote server
+    - scp -r ./* $PROD_SERVER_USER@$PROD_SERVER_ADDRESS:$PROD_SERVER_VERSIONS_DIR/$GIT_VERSION_TAG
+
+    # Copy license to back it up (only needed for production license)
+    - ssh -p22 $PROD_SERVER_USER@$PROD_SERVER_ADDRESS "cp $PROD_SERVER_TARGET_DIR/config/license.key $PROD_SERVER_LICENSE_DIR"
+
+    # Remove files from live folder
+    - ssh -p22 $PROD_SERVER_USER@$PROD_SERVER_ADDRESS "
+      rm -rf $PROD_SERVER_TARGET_DIR/config && rm -rf $PROD_SERVER_TARGET_DIR/modules &&
+      rm -rf $PROD_SERVER_TARGET_DIR/composer.json &&
+      rm -rf $PROD_SERVER_TARGET_DIR/composer.lock"
+
+    # Copy files from new version to live folder
+    - ssh -p22 $PROD_SERVER_USER@$PROD_SERVER_ADDRESS "
+      cp -r $PROD_SERVER_VERSIONS_DIR/$GIT_VERSION_TAG/config $PROD_SERVER_TARGET_DIR;
+      '[ -d $PROD_SERVER_VERSIONS_DIR/$GIT_VERSION_TAG/modules ]'  && cp -r $PROD_SERVER_VERSIONS_DIR/$GIT_VERSION_TAG/modules $PROD_SERVER_TARGET_DIR;
+      cp -r $PROD_SERVER_VERSIONS_DIR/$GIT_VERSION_TAG/composer.json $PROD_SERVER_TARGET_DIR;
+      cp -r $PROD_SERVER_VERSIONS_DIR/$GIT_VERSION_TAG/composer.lock $PROD_SERVER_TARGET_DIR"
+
+    # Composer update
+    - ssh -p22 $PROD_SERVER_USER@$PROD_SERVER_ADDRESS "
+      cd $PROD_SERVER_TARGET_DIR &&
+      composer config gitlab-token.git.intention.de $GITLAB_ACCESS_TOKEN &&
+      composer update"
+
+    # Backup the database just in case any migrations or Project Config changes have issues
+    - ssh -p22 $PROD_SERVER_USER@$PROD_SERVER_ADDRESS "cd $PROD_SERVER_TARGET_DIR && php craft db/backup"
+
+    # Run composer update, pending migrations, sync project config and clear caches
+    - ssh -p22 $PROD_SERVER_USER@$PROD_SERVER_ADDRESS "
+      cd $PROD_SERVER_TARGET_DIR &&
+      composer update &&
+      php craft clear-caches/all &&
+      php craft migrate/all &&
+      php craft project-config/apply"
+
+  environment:
+    name: production
+    url: $PROD_URL
+  when: manual
+  only:
+    refs:
+      - master

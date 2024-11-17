@@ -1,0 +1,16 @@
+columnSuffix: mmowkaya
+handle: seoTitle
+instructions: null
+name: SEO-Titel
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: 60
+  code: false
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

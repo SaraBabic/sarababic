@@ -1,0 +1,29 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  - 0d60f280-15cb-4a7f-a9f9-925cff9353ef # Standard
+handle: pages
+name: Seiten
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primäre eintrag Seite'
+      -
+        - urlFormat
+        - '@previewUrl/?entryUid={sourceUid}&uri={uri}&siteId={siteId}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  9150003f-ee06-497a-bceb-c2c169d93206: # CraftCMS Boilerplate
+    enabledByDefault: true
+    hasUrls: true
+    template: seiten/_entry
+    uriFormat: '{parent.slug}/{slug}'
+structure:
+  maxLevels: null
+  uid: 1baecbb0-38aa-4b93-89a7-681e81f7756f
+type: structure

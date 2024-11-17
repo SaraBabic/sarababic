@@ -1,0 +1,76 @@
+columnSuffix: null
+handle: columns
+instructions: null
+name: Spalten
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - '50 / 50'
+        -
+          - value
+          - '5050'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '33 / 33 / 33'
+        -
+          - value
+          - '333333'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '33 / 66'
+        -
+          - value
+          - '3366'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '66 / 33'
+        -
+          - value
+          - '6633'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '25 / 75'
+        -
+          - value
+          - '2575'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '75 / 25'
+        -
+          - value
+          - '7525'
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

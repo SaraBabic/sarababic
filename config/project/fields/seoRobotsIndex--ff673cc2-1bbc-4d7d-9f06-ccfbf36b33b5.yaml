@@ -1,0 +1,12 @@
+columnSuffix: fnipwuau
+handle: seoRobotsIndex
+instructions: 'Soll diese Seite von Suchmaschinen indexiert werden?'
+name: Indexierung
+searchable: false
+settings:
+  default: true
+  offLabel: null
+  onLabel: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

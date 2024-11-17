@@ -1,0 +1,65 @@
+color: blue
+fieldLayouts:
+  7604e3ee-164a-4700-b6e9-89700bdf7ce8:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 672dda66-aed9-4660-9da4-6b31d6342823
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 6ba183da-ef91-4615-850d-4b82daf96849 # Link
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8adf902f-c546-4ac6-af6d-2194c16f0c05
+            userCondition: null
+            warning: null
+            width: 100
+        name: Inhalt
+        uid: e5ff6aa2-c1f6-4eee-9f0e-cbae8315ab03
+        userCondition: null
+handle: mainNavigation
+hasTitleField: true
+icon: bars
+name: Hauptnavigation
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: ''
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
