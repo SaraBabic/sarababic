@@ -1,7 +1,7 @@
 isPublic: false
 name: 'Private Schema'
 scope:
-  - 'sites.9150003f-ee06-497a-bceb-c2c169d93206:read' # CraftCMS Boilerplate
+  - 'sites.9150003f-ee06-497a-bceb-c2c169d93206:read' # sarababic
   - 'elements.drafts:read'
   - 'elements.revisions:read'
   - 'elements.inactive:read'

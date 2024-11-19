@@ -19,7 +19,7 @@ previewTargets:
         - '1'
 propagationMethod: all
 siteSettings:
-  9150003f-ee06-497a-bceb-c2c169d93206: # CraftCMS Boilerplate
+  9150003f-ee06-497a-bceb-c2c169d93206: # sarababic
     enabledByDefault: true
     hasUrls: true
     template: null

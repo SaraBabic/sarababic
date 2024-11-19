@@ -1,4 +1,4 @@
-dateModified: 1718628494
+dateModified: 1732049566
 email:
   fromEmail: $EMAIL_SENDER_ADDRESS
   fromName: $EMAIL_SENDER_NAME
@@ -47,7 +47,7 @@ meta:
     12853f5e-57c7-40e4-908a-b7be4ce30bc7: Default # Default
     64259d2d-817e-4fb4-a9be-619bd3c57014: Aktiv # Aktiv
     4588913f-bc97-4ebe-8ec3-29a8efce9e67: Bilder # Bilder
-    9150003f-ee06-497a-bceb-c2c169d93206: 'CraftCMS Boilerplate' # CraftCMS Boilerplate
+    9150003f-ee06-497a-bceb-c2c169d93206: sarababic # sarababic
     62533532-ce6a-420e-8c67-b7c8029c525e: SEO-Beschreibung # SEO-Beschreibung
     a5ba3d2a-68ae-4b35-a7bf-f9ef56ec8d9c: Seiten # Seiten
     a7f070a5-b268-4ce3-9efa-a924ef697dc4: Seitenkonfiguration # Seitenkonfiguration
